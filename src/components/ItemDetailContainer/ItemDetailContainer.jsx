@@ -1,14 +1,14 @@
 import {useState, useEffect} from 'react'
-import {getProductos} from '../Helpers/ItemList.js'
+import {getDescription} from '../Helpers/ItemDetail.js'
 
-function ItemListContainer( {greetings}) {
+function ItemDetailContainer( {greetings}) {
 
-    const [products, setProducts] = useState([])
+    const [description, setDescription] = useState([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        getProductos
-        .then(resp => setProducts(resp))
+        getDescription
+        .then(resp => setDescription(resp))
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
 
@@ -21,15 +21,17 @@ function ItemListContainer( {greetings}) {
             { loading ? 
                 <h2>Cargando...</h2> 
                 :  
-               products.map((prod) =>   <div className='col-md-4'>
+                description.map((prod) =>   <div className='col-md-4'>
                                             <div className="card w-100 mt-5">
                                                 <div className="card-header">
-                                                    {`${prod.product} - ${prod.material}`}
+                                                    {`${prod.product}`}
                                                 </div>
                                                 <div className="card-body">
-                                                    <img src={prod.img} alt="Producto" className='w-10'/>
+                                                    <img src={prod.img} alt="Producto" className='w-50'/>
                                                     <br />
                                                     {prod.price}
+                                                    <br />
+                                                    {prod.desc}
                                                 </div>
                                             </div>
                                         </div>)
@@ -38,4 +40,5 @@ function ItemListContainer( {greetings}) {
     )
 }
 
-export default ItemListContainer
+
+export default ItemDetailContainer
