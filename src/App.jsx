@@ -2,8 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/Contador/ItemCount';
-import ItemDetail from './components/ItemDetailContainer/ItemDetailContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 function App() {
   return (
@@ -34,7 +33,7 @@ function App() {
             <Route
             exact
             path="/detalles/:id"
-            element= { <ItemDetail/> }
+            element= { <ItemDetailContainer/> }
             />
 
           </Routes>

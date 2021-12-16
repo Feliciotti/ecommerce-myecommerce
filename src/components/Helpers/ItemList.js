@@ -4,7 +4,8 @@ const products = [
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'gorras',
         color: 'negro',
-        price: 200
+        price: 200,
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dicta tempore. Animi, aspernatur. Hic eum, sint quas aut similique dolorum.'
     },
 
     {
@@ -12,7 +13,8 @@ const products = [
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'gorras',
         color: 'violeta',
-        price: 500
+        price: 500,
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dicta tempore. Animi, aspernatur. Hic eum, sint quas aut similique dolorum.'
     },
 
     {
@@ -20,7 +22,8 @@ const products = [
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'gorras',
         color: 'azul',
-        price: 500
+        price: 500,
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dicta tempore. Animi, aspernatur. Hic eum, sint quas aut similique dolorum.'
     },
 
     {
@@ -28,7 +31,8 @@ const products = [
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'remeras',
         color: 'varios',
-        price: 700
+        price: 700,
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dicta tempore. Animi, aspernatur. Hic eum, sint quas aut similique dolorum.'
     },
 
     {
@@ -36,7 +40,8 @@ const products = [
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'remeras',
         color: 'negro',
-        price: 700
+        price: 700,
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dicta tempore. Animi, aspernatur. Hic eum, sint quas aut similique dolorum.'
     },
     
     {
@@ -44,7 +49,8 @@ const products = [
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'remeras',
         color: 'azul',
-        price: 700
+        price: 700,
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dicta tempore. Animi, aspernatur. Hic eum, sint quas aut similique dolorum.'
     }
 ]
 
