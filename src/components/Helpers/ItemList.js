@@ -1,38 +1,50 @@
 const products = [
     {
         id: 1,
-        img: 'https://www.arauco.cl/chile/wp-content/uploads/sites/14/2017/07/400x400.png',
-        product: 'gorra',
-        material: 'lana',
+        img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
+        product: 'gorras',
         color: 'negro',
         price: 200
     },
 
     {
         id: 2,
-        img: 'https://www.arauco.cl/chile/wp-content/uploads/sites/14/2017/07/400x400.png',
-        product: 'remera',
-        material: 'algodón',
-        color: 'negro',
+        img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
+        product: 'gorras',
+        color: 'violeta',
         price: 500
     },
 
     {
         id:3,
-        img: 'https://www.arauco.cl/chile/wp-content/uploads/sites/14/2017/07/400x400.png',
-        product: 'pantalón',
-        material: 'jean',
+        img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
+        product: 'gorras',
         color: 'azul',
-        price: 700
+        price: 500
     },
 
     {
         id:4,
-        img: 'https://www.arauco.cl/chile/wp-content/uploads/sites/14/2017/07/400x400.png',
-        product: 'medias',
-        material: 'algodón',
+        img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
+        product: 'remeras',
         color: 'varios',
-        price: 200
+        price: 700
+    },
+
+    {
+        id:5,
+        img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
+        product: 'remeras',
+        color: 'negro',
+        price: 700
+    },
+    
+    {
+        id:6,
+        img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
+        product: 'remeras',
+        color: 'azul',
+        price: 700
     }
 ]
 
