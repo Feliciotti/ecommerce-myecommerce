@@ -1,6 +1,7 @@
 const products = [
     {
         id: 1,
+        stock: 10,
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'gorras',
         color: 'negro',
@@ -10,6 +11,7 @@ const products = [
 
     {
         id: 2,
+        stock: 10,
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'gorras',
         color: 'violeta',
@@ -19,6 +21,7 @@ const products = [
 
     {
         id:3,
+        stock: 5,
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'gorras',
         color: 'azul',
@@ -28,6 +31,8 @@ const products = [
 
     {
         id:4,
+        stock: 20,
+        stock: 15,
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'remeras',
         color: 'varios',
@@ -37,6 +42,7 @@ const products = [
 
     {
         id:5,
+        stock: 5,
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'remeras',
         color: 'negro',
@@ -46,6 +52,7 @@ const products = [
     
     {
         id:6,
+        stock: 10,
         img: 'https://cdn2.myminifactory.com/assets/object-assets/5f8a412b76b37/images/720X720-bulbasaur-2.jpg',
         product: 'remeras',
         color: 'azul',

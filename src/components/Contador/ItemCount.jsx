@@ -1,27 +1,23 @@
 import {useState} from 'react'
 
-function ItemCount() {
+const ItemCount = ({stock, onAdd}) => {
+    const [value, setNumber] = useState(1);
 
-    const min = 1
-    const max = 5
+    const add = () => {
+        value !== stock && setNumber(value + 1)
+    };
 
-    const [ value, setValue ] = useState(min)
-
-    //let count = 0
-    const handleSuma=()=>{
-        value < max &&
-            setValue(value + 1)
-    }
-    const handleResta=()=>{
-        value > min &&
-            setValue(value - 1)
+    const substract = () => {
+        value !== 0 && setNumber(value - 1)
     }
 
     return(
         <div>
             <p>{value}</p>
-            <button onClick={handleSuma}> + </button>
-            <button onClick={handleResta}> - </button>
+            <button onClick={add}> + </button>
+            <button onClick={substract}> - </button>
+            <br/>
+            <button disabled={value === 0} onClick={ ()=> onAdd(value)}> Agregar al carrito </button>
         </div>
     );
 }
