@@ -1,16 +1,23 @@
-import { Button } from "bootstrap";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../Context/CartContext";
 import ItemCount from "../Contador/ItemCount";
 
 const ItemDetail = ({products}) => {
+
+    const {cartList, cartAdd} = useCartContext()
 
     const [goCart, setGoCart] = useState(false)
 
     const onAdd = (quantityToAdd) =>{
         console.log(quantityToAdd)
+        cartAdd( { ...products, quantity: quantityToAdd } )
+
         setGoCart(true)
+
     }
+
+    console.log(cartList)
 
     return (
         <div className='col-md-4'>
