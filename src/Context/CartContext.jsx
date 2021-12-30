@@ -4,37 +4,61 @@ const cartContext = createContext([]);
 export const useCartContext = () => useContext(cartContext)
 
 function CartContextProvider({children}) {
+    
     const [cartList, setCartList] = useState([])
 
-    //function cartAdd(item) {
-       // setCartList( [...cartList, item])
-    //}
+    //// AÑADIR PRODUCTOS ////
 
     function cartAdd (products) {
 
         const index = cartList.findIndex(i => i.id === products.id)
 
             if (index > -1) {
-                const oldProduct = cartList[index].quantity
+                const oldProduct = cartList[index].stock
 
                 cartList.splice(index, 1)
 
-                setCartList( [...cartList, {products, quantity: products.quantity + oldProduct} ] )
+                setCartList( [...cartList, {products, stock: products.stock + oldProduct} ] )
 
             } else {
                 setCartList( [...cartList, products] )
             }
     }
 
+
+    //// ELIMINAR PRODUCTO /////
+
+    function removeItem (products) {
+
+        const index = cartList.findIndex(i => i.id === products.id)
+
+            if (index > -1) {
+                const oldProduct = cartList[index].stock
+
+                cartList.splice(index, 1)
+
+                setCartList( [...cartList, {products, stock: products.stock + oldProduct} ] )
+
+            } else {
+                setCartList( [...cartList, products] )
+            }
+    }
+
+
+    //// VACIAR CARRITO ////////
+
+
     function resetCart() {
         setCartList([])
     }
+
 
     return(
         <cartContext.Provider value={ {
             cartList,
             cartAdd,
-            resetCart
+            resetCart,
+            removeItem
          } }>
             { children }
         </cartContext.Provider>

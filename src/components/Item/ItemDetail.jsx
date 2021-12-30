@@ -11,7 +11,7 @@ const ItemDetail = ({products}) => {
 
     const onAdd = (quantityToAdd) =>{
         console.log(quantityToAdd)
-        cartAdd( { ...products, quantity: quantityToAdd } )
+        cartAdd( { ...products, stock: quantityToAdd } )
 
         setGoCart(true)
 

@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import {getProductos} from '../Helpers/ItemList.js'
+//import {getProductos} from '../Helpers/ItemList.js'
 import ItemDetail from '../Item/ItemDetail.jsx'
+import { doc, getDoc, getFirestore, where} from 'firebase/firestore'
+
 
 
 function ItemDetailContainer( {greetings}) {
@@ -12,13 +14,25 @@ function ItemDetailContainer( {greetings}) {
 
      // no necesito if
      
-    useEffect(() => {
-        getProductos
-        .then(resp => setProducts(resp.find(prod => prod.id === parseInt(id))))
+     useEffect(() => {
+        const db = getFirestore()
+
+        const queryDb = doc(db, 'products', id)
+
+        getDoc(queryDb)
+        .then(resp => setProducts( { id: resp.id, ...resp.data() } ) )
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
+    
+    }, [])
+
+    //useEffect(() => {
+    //    getProductos
+    //    .then(resp => setProducts(resp.find(prod => prod.id === parseInt(id))))
+    //    .catch(err => console.log(err))
+    //    .finally(() => setLoading(false))
  
-    }, [id])
+    //}, [id])
 
     console.log(products)
     return (
