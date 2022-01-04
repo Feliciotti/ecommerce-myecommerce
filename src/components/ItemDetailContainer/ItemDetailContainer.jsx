@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 //import {getProductos} from '../Helpers/ItemList.js'
 import ItemDetail from '../Item/ItemDetail.jsx'
-import { doc, getDoc, getFirestore, where} from 'firebase/firestore'
+import { doc, getDoc, getFirestore} from 'firebase/firestore'
 
 
 
@@ -11,8 +11,6 @@ function ItemDetailContainer( {greetings}) {
     const { id } = useParams()
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-
-     // no necesito if
      
      useEffect(() => {
         const db = getFirestore()

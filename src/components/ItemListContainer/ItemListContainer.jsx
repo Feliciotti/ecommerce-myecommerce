@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList.jsx'
 import { collection, getDocs, getFirestore} from 'firebase/firestore'
-import { getFirestoreApp } from '../../config/getFirestoreApp.jsx'
 
 function ItemListContainer( {greetings}) {
 
@@ -23,21 +22,6 @@ function ItemListContainer( {greetings}) {
     
     }, [idProd])
 
-   // useEffect(() => {
-     //   if (idProd) {
-       //         getProductos
-         //   .then(resp => setProducts(resp.filter(prod=> prod.product === idProd)))
-           // .catch(err => console.log(err))
-            //.finally(() => setLoading(false))
-
-      //  } else {
-        //        getProductos
-          //  .then(resp => setProducts(resp))
-            //.catch(err => console.log(err))
-            //.finally(() => setLoading(false))
-        //}
-
-    //}, [idProd])
 
     return (
         <div>

@@ -7,8 +7,7 @@ function CartContextProvider({children}) {
     
     const [cartList, setCartList] = useState([])
 
-    //// AÑADIR PRODUCTOS ////
-
+    //// AÑADIR // SUMAR PRODUCTOS ////
     function cartAdd (products) {
 
         const index = cartList.findIndex(i => i.id === products.id)
@@ -25,10 +24,8 @@ function CartContextProvider({children}) {
             }
     }
 
-
-    //// ELIMINAR PRODUCTO /////
-
-    function removeItem (products) {
+    //// RESTAR PRODUCTOS /////
+    function substractItem (products) {
 
         const index = cartList.findIndex(i => i.id === products.id)
 
@@ -44,21 +41,36 @@ function CartContextProvider({children}) {
             }
     }
 
-
     //// VACIAR CARRITO ////////
-
-
     function resetCart() {
         setCartList([])
     }
+
+    /// PRECIO TOTAL
+    const totalPrice =()=>{
+        return cartList.reduce((amount, products) => amount + (products.stock * products.price) , 0)
+    }
+
+    /// ITEM EN CARRITO
+    const totalItems =()=>{
+        return cartList.reduce((amount, products) => amount + (products.stock) , 0)
+    }
+
+    /// BORRAR ITEM
+    const deleteItem = (id) => {
+        setCartList( cartList.filter(products => products.id !== id) )
+        }
 
 
     return(
         <cartContext.Provider value={ {
             cartList,
             cartAdd,
-            resetCart,
-            removeItem
+            substractItem,
+            deleteItem,
+            totalPrice,
+            totalItems,
+            resetCart
          } }>
             { children }
         </cartContext.Provider>
