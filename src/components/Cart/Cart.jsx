@@ -1,17 +1,32 @@
 import { Link } from 'react-router-dom'
-import {addDoc, collection, getFirestore} from 'firebase/firestore'
+import {addDoc, collection, getFirestore, Timestamp} from 'firebase/firestore'
 import {useCartContext} from '../../Context/CartContext.jsx'
+import { useState } from 'react'
 
 const Cart = () => {
 
+    const [formData, setFormData] = useState({
+        name: "", phone: "", email:""
+    })
+
     const {cartList, resetCart, totalPrice, deleteItem, totalItems} = useCartContext()
+
+    const handleChange = (e) => {
+
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+    console.log(formData)
 
     const generateOrder = (e) =>{
         e.preventDefault()
 
         const order = {}
 
-        order.buyer = {name: 'Aimon', num: '1122334455', email: 'aimon.cabral@gmail.com'}
+        order.date = Timestamp.fromDate(new Date())
+        order.buyer = formData
         order.total = totalPrice();
 
         order.products = cartList.map(cartItem => {
@@ -49,8 +64,30 @@ const Cart = () => {
                                     <br/>
                                     Precio total: {totalPrice()}$
                                  </p>
-            <form onSubmit={generateOrder}>
+            <form
+                onSubmit={generateOrder}
+                onChange={handleChange}
+            >
+
+                <input
+                type='text'
+                name='name'
+                placeholder='Nombre'
+                value={formData.name} />
+
+                <input type='text'
+                name='phone'
+                placeholder='Teléfono'
+                value={formData.phone}/>
+
+                <input
+                type='email'
+                name='email'
+                placeholder='Correo electrónico'
+                value={formData.email}/>
+                
                 <button>Comprar</button>
+
             </form>                
             <button onClick={resetCart}> Vaciar </button>
             </div>
