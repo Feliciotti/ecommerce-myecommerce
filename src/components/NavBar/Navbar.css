@@ -1,0 +1,22 @@
+.pokenav{
+    background: rgb(0,133,22);
+    background: linear-gradient(0deg, rgba(0,133,22,0) 0%, rgba(130,216,244,1) 100%);
+    box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.2);
+    margin-bottom: 40px;
+}
+
+.pokenav__container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pokelink__nav{
+    margin: 10px 30px;
+    text-decoration: none;
+}
+
+.pokecart{
+    display: flex;
+    
+}

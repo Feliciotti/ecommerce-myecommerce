@@ -2,36 +2,46 @@ import { Link } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
+import Pokelogo from './img/Pokelogo.png'
+import './Navbar.css'
 import CartWidget from '../Cart/CartWidget'
 
 function NavBar() {
     return(
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className='pokenav' collapseOnSelect expand="lg">
 
-                <Container>
+                <Container className='pokenav__container'>
+                    
+                    <Link to="/" className='pokelink__nav' >
+                        <img className='img-fluid' alt='logo' src={Pokelogo}/>
+                    </Link>
 
-                    <Navbar.Brand href="/">Logo</Navbar.Brand>
+                    
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className="me-auto">
 
-                            <Link to="/productos/gorras"> Gorras </Link>
-                            <Link to="/productos/remeras"> Remeras </Link>
+                            <Nav.Link>
 
+                                <Link to="/productos/grass" className='pokelink pokelink__nav' >Tipo Planta</Link>
+                                <Link to="/productos/water" className='pokelink pokelink__nav' >Tipo Agua</Link>
+                                <Link to="/productos/fire" className='pokelink pokelink__nav' >Tipo Fuego</Link>
+                                <Link to="/productos/special" className='pokelink pokelink__nav'>Especiales</Link>
+                            </Nav.Link>
+                            
                         </Nav>
 
                         <Nav>
 
-                        <Link to="/cart">Carrito</Link>
+                        <CartWidget/>
                         
                         </Nav>
 
                     </Navbar.Collapse>
 
-                    <CartWidget/>
+                    
 
                 </Container>
 

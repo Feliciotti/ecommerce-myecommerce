@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import '../Helpers - css/Buttons.css'
 
 const ItemCount = ({stock, onAdd}) => {
     const [value, setNumber] = useState(1);
@@ -12,12 +13,22 @@ const ItemCount = ({stock, onAdd}) => {
     }
 
     return(
-        <div>
-            <p>{value}</p>
-            <button onClick={add}> + </button>
-            <button onClick={substract}> - </button>
-            <br/>
-            <button disabled={value === 0} onClick={ ()=> onAdd(value)}> Agregar al carrito </button>
+        <div className='counter-btns'>
+
+            <div className='add-remove-btns__container'>
+
+                <button className='add-remove-btn' onClick={substract}> - </button>
+                <p className='counter-value'>{value}</p>
+                <button className='add-remove-btn' onClick={add}> + </button>
+
+            </div>
+
+            <div>
+                <button className="poketitle pokebutton pokebtnAdd"
+                disabled={value === 0} onClick={ ()=> onAdd(value)}>
+                Agregar al carrito
+                </button>
+            </div>
         </div>
     );
 }

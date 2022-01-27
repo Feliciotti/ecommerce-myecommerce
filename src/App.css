@@ -1,0 +1,12 @@
+.App{
+    height: 100vh;
+}
+
+.background{
+    background-image: url(https://66.media.tumblr.com/tumblr_mai132OrFS1rfjowdo1_500.gif);
+    background-color: rgba(0, 133, 22, 0.582);
+    background-position: right bottom;
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

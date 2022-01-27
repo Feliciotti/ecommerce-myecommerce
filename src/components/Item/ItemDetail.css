@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+
+
+.pokedetail{
+    height: auto;
+}
+
+.detail__container{
+    box-shadow: 4px 4px 6px rgba(255, 255, 255, 0.185);
+    background: linear-gradient(0deg, rgba(44,196,139,1) 0%, rgba(130,216,244,1) 100%);
+    display: flex;
+    margin-bottom: 60px;
+    width: 70%;
+}
+
+.poketitle, .pokebutton{
+    color: rgba(100, 65, 32, 0.815);
+    font-family: 'Dongle', sans-serif;
+    font-weight: bold;
+}
+
+.pokeimg{
+    width: 50%;
+}
+
+.img-text-detail__container, .poketext-detail__container{
+    height: auto;
+}
+
+
+.pokedetail{
+    padding: 20px;
+    line-height: 100%
+}
+
+.goToCart-btn{
+    margin-bottom: 60px;
+}

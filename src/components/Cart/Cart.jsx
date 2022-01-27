@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom'
 import {addDoc, collection, getFirestore, Timestamp} from 'firebase/firestore'
 import {useCartContext} from '../../Context/CartContext.jsx'
 import { useState } from 'react'
+import pokeball from './pokeball.png'
+import removeitem from './removeitem.png'
+import './Cart.css'
+import '../Helpers - css/Buttons.css'
+import '../Helpers - css/Form.css'
+import '../Helpers - css/Links.css'
 
 const Cart = () => {
 
@@ -47,49 +53,55 @@ const Cart = () => {
 
     if (cartList.length === 0) {
         return (
-            <div>
-            <h1>El carrito está vacío</h1>
-            <Link to="/">Volver a la tienda</Link>
+            <div className='pokecart__empty'>
+            <h1 className='poketitle'>SIN POKEMONES</h1>
+            <div className='pokeball__container'>
+                <img className='img-fluid' src={pokeball} alt="pokebola" />
+            </div>
+            <Link className='pokelink pokelink_toStore' to="/">Volver a la tienda</Link>
             </div>
         )
     }else{
         return (
-            <div>
-            {cartList.map(prod=> <p>
-                                    <button onClick={deleteItem}>Eliminar</button>
-                                    {prod.product} {prod.stock}u.
-                                 </p>)}
-                                 <p>
-                                    Cantidad de artículos: {totalItems()}
-                                    <br/>
-                                    Precio total: {totalPrice()}$
-                                 </p>
-            <form
-                onSubmit={generateOrder}
-                onChange={handleChange}
-            >
+            <div className='pokelist__container'>
+                {cartList.map(prod=> 
+                                        <p className='poketext pokelist'>
+                                        <img className='img-fluid poketrashcan' src={removeitem} alt="Eliminar" onClick={deleteItem}/>
+                                        {prod.product} {prod.stock}u.
+                                    </p>)}
+                                    <p className='poketext'>
+                                        Cantidad de unidades: {totalItems()}
+                                        <br/>
+                                        Precio total: {totalPrice()}$
+                                    </p>
+                <form
+                    onSubmit={generateOrder}
+                    onChange={handleChange}
+                >
 
-                <input
-                type='text'
-                name='name'
-                placeholder='Nombre'
-                value={formData.name} />
+                    <input
+                    type='text'
+                    name='name'
+                    placeholder='Nombre'
+                    value={formData.name} />
 
-                <input type='text'
-                name='phone'
-                placeholder='Teléfono'
-                value={formData.phone}/>
+                    <input type='text'
+                    name='phone'
+                    placeholder='Teléfono'
+                    value={formData.phone}/>
 
-                <input
-                type='email'
-                name='email'
-                placeholder='Correo electrónico'
-                value={formData.email}/>
-                
-                <button>Comprar</button>
+                    <input
+                    type='email'
+                    name='email'
+                    placeholder='e-mail'
+                    value={formData.email}/>
+                    
+                    <button className='pokebutton pokebutton__cart buy-btn'>Comprar</button>
 
-            </form>                
-            <button onClick={resetCart}> Vaciar </button>
+                </form>
+                                
+                <button className='pokebutton pokebutton__cart resetCart' onClick={resetCart}> Vaciar </button>
+
             </div>
         )
     }

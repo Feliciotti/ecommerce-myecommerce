@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import NavBar from './components/NavBar/NavBar';
+import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart';
@@ -10,51 +11,55 @@ function App() {
 
   return (
 
-    <div className="App">
+    <div className='App'>
 
-      <CartContextProvider>
+      <div className='background'>
 
-        <BrowserRouter>
+        <CartContextProvider>
 
-          <header className="App-header">
-            <NavBar/>
-          </header>
+          <BrowserRouter>
 
-          <center>
-            
-            <Routes>
+            <header className="App-header">
+              <Navbar/>
+            </header>
 
-              <Route
-              exact
-              path="/"
-              element= { <ItemListContainer greeting= "ItemListContainer desde App" />}
-              />
+            <center className='AppCenter'>
+              
+              <Routes>
 
-              <Route 
-              exact
-              path="/productos/:idProd"
-              element= { <ItemListContainer greeting= "ItemListContainer desde App" /> }
-              />
+                <Route
+                exact
+                path="/"
+                element= { <ItemListContainer greeting= "ItemListContainer desde App" />}
+                />
 
-              <Route
-              exact
-              path="/detalles/:id"
-              element= { <ItemDetailContainer/> }
-              />
+                <Route 
+                exact
+                path="/productos/:idProd"
+                element= { <ItemListContainer greeting= "ItemListContainer desde App" /> }
+                />
 
-              <Route
-              exact
-              path="/cart"
-              element= { <Cart/> }
-              />
+                <Route
+                exact
+                path="/detalles/:id"
+                element= { <ItemDetailContainer/> }
+                />
 
-            </Routes>
+                <Route
+                exact
+                path="/cart"
+                element= { <Cart/> }
+                />
 
-          </center>
+              </Routes>
 
-        </BrowserRouter>
+            </center>
 
-      </CartContextProvider>
+          </BrowserRouter>
+
+        </CartContextProvider>
+
+      </div>
 
     </div>
   );

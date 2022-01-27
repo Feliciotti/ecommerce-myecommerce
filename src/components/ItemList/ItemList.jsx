@@ -4,7 +4,15 @@ import Item from '../Item/Item'
 function ItemList({ productos }) {
     return (
         <>
-            { productos.map((prod) => <Item prod= {prod} />)  }
+            <div className='container'>
+                <div className='row row-5 d-flex justify-content-center'>
+
+                    { productos.map((prod) => <Item prod= {prod} />)  }
+
+                </div>
+
+
+            </div>
         </>
     )
 }

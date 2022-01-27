@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
 import ItemCount from "../Contador/ItemCount";
+import './Item.css'
+import '../Helpers - css/Links.css'
+import './ItemDetail.css'
 
 const ItemDetail = ({products}) => {
 
@@ -20,25 +23,30 @@ const ItemDetail = ({products}) => {
     console.log(cartList)
 
     return (
-        <div className='col-md-4'>
-                    <div className="card w-100 mt-5">
+        <div className='col-md-4 pokedetail'>
+                    <div className="card detail__container">
 
-                        <div className="card-header">
-                            {products.product}
+                        <div>
+                            <h2 className="poketitle">
+                                {`${products.product} - ${products.price}$`}
+                            </h2>
                         </div>
 
-                        <div className="card-body">
+                        <div className='img-text-detail__container'>
                             <img src={products.img} alt="Producto" className='w-50'/>
-                            <br />
 
-                            {products.price}
-                            <br />
-                            {products.desc}
+                            <div className="poketext-detail__container">
+                                <p className="poketext pokedetail">
+                                    {products.desc}
+                                </p>
+                            </div>
+
+
                         </div>
                         {!goCart ? (
                         <ItemCount stock={products.stock} onAdd={onAdd}/>
                         ) : (
-                        <Link to="/cart">Ir al carrito </Link>)}
+                        <Link className="pokelink goToCart-btn" to="/cart">Ir al carrito </Link>)}
 
                     </div>
         </div>

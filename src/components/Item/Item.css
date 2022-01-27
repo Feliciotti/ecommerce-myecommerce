@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+
+
+.card__container{
+    width: 40%;
+    margin: 2% 2% 3% 2%;
+    box-shadow: 4px 4px 6px rgba(255, 255, 255, 0.185);
+    background: linear-gradient(0deg, rgba(44,196,139,1) 0%, rgba(130,216,244,1) 100%);
+    
+}
+
+.poketitle, .pokebutton, .poketext{
+    color: rgba(100, 65, 32, 0.815);
+    font-family: 'Dongle', sans-serif;
+}
+
+.poketitle, .pokebutton{
+    font-weight: bold;
+    font-size: 250%;
+}
+
+.poketitle{
+    margin: 10px 0;
+}
+
+.poketext__container{
+    margin: 10%;
+}
+
+.poketext{
+    font-size: 200%;
+}
+
+.pokeimg{
+    width: 50%;
+}
+
+
+.img-text__container{
+    margin-bottom: 50px;
+    height: 500px;
+}

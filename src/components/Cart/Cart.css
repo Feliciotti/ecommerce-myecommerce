@@ -1,0 +1,44 @@
+.pokecart__empty{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.pokeball__container{
+    margin: 20px auto 40px;
+}
+
+.buy-btn{
+    font-size: 30px;
+    width: 50%;
+    margin: auto
+}
+
+.poketrashcan{
+    width: 1.5%;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.pokelist__container{
+    height: 100vh;
+}
+
+.pokelist{
+    margin-top:40px;
+}
+
+.resetCart{
+    font-size: 30px;
+}
+
+.cartWidget{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartCounter{
+    align-items: center;
+    margin: auto auto auto 10px
+}
