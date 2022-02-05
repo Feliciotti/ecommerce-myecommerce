@@ -8,19 +8,16 @@ import './ItemDetail.css'
 
 const ItemDetail = ({products}) => {
 
-    const {cartList, cartAdd} = useCartContext()
+    const { cartAdd} = useCartContext()
 
     const [goCart, setGoCart] = useState(false)
 
     const onAdd = (quantityToAdd) =>{
-        console.log(quantityToAdd)
         cartAdd( { ...products, stock: quantityToAdd } )
 
         setGoCart(true)
 
     }
-
-    console.log(cartList)
 
     return (
         <div className='col-md-4 pokedetail'>

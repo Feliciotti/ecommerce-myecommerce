@@ -16,12 +16,11 @@ function ItemDetailContainer( {greetings}) {
 
         getDoc(queryDb)
         .then(resp => setProducts( { id: resp.id, ...resp.data() } ) )
-        .catch(err => console.log(err))
+        .catch(err => (err))
         .finally(() => setLoading(false))
     
-    }, [])
+    }, [id])
 
-    console.log(products)
     return (
         <div>
             {greetings}

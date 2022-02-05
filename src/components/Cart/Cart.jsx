@@ -15,7 +15,7 @@ const Cart = () => {
         name: "", phone: "", email:""
     })
 
-    const {cartList, resetCart, totalPrice, deleteItem, totalItems} = useCartContext()
+    const {cartList, resetCart, totalPrice, totalItems, deleteItem} = useCartContext()
 
     const handleChange = (e) => {
 
@@ -24,7 +24,6 @@ const Cart = () => {
             [e.target.name]: e.target.value
         })
     }
-    console.log(formData)
 
     const generateOrder = (e) =>{
         e.preventDefault()
@@ -46,8 +45,6 @@ const Cart = () => {
         const db = getFirestore();
         const orderCollection = collection(db, 'orders');
         addDoc(orderCollection, order)
-        .then(resp => console.log(resp))
-        .catch(err => console.log(err))
     }
 
 
@@ -65,8 +62,8 @@ const Cart = () => {
         return (
             <div className='pokelist__container'>
                 {cartList.map(prod=> 
-                                        <p className='poketext pokelist'>
-                                        <img className='img-fluid poketrashcan' src={removeitem} alt="Eliminar" onClick={deleteItem}/>
+                                    <p className='poketext pokelist'>
+                                        <img onClick={() =>deleteItem(prod.id)} className='img-fluid poketrashcan' src={removeitem} alt="Eliminar"/>
                                         {prod.product} {prod.stock}u.
                                     </p>)}
                                     <p className='poketext'>
@@ -96,7 +93,7 @@ const Cart = () => {
                     placeholder='e-mail'
                     value={formData.email}/>
                     
-                    <button className='pokebutton pokebutton__cart buy-btn'>Comprar</button>
+                    <button onClick={()=> alert('Orden generada!')} className='pokebutton pokebutton__cart buy-btn'>Comprar</button>
 
                 </form>
                                 

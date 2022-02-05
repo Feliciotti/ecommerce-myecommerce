@@ -17,29 +17,13 @@ function CartContextProvider({children}) {
 
                 cartList.splice(index, 1)
 
-                setCartList( [...cartList, {products, stock: products.stock + oldProduct} ] )
+                setCartList( [...cartList, {...products, stock: products.stock + oldProduct} ] )
 
             } else {
                 setCartList( [...cartList, products] )
             }
     }
 
-    //// RESTAR PRODUCTOS /////
-    function substractItem (products) {
-
-        const index = cartList.findIndex(i => i.id === products.id)
-
-            if (index > -1) {
-                const oldProduct = cartList[index].stock
-
-                cartList.splice(index, 1)
-
-                setCartList( [...cartList, {products, stock: products.stock + oldProduct} ] )
-
-            } else {
-                setCartList( [...cartList, products] )
-            }
-    }
 
     //// VACIAR CARRITO ////////
     function resetCart() {
@@ -58,15 +42,14 @@ function CartContextProvider({children}) {
 
     /// BORRAR ITEM
     const deleteItem = (id) => {
-        setCartList( cartList.filter(products => products.id !== id) )
-        }
+        setCartList( cartList.filter(product => product.id !== id) ) 
+    }
 
 
     return(
         <cartContext.Provider value={ {
             cartList,
             cartAdd,
-            substractItem,
             deleteItem,
             totalPrice,
             totalItems,
