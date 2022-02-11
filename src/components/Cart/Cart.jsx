@@ -11,6 +11,7 @@ import '../Helpers - css/Links.css'
 
 const Cart = () => {
 
+    const [idOrder, setIdOrder] = useState('')
     const [formData, setFormData] = useState({
         name: "", phone: "", email:""
     })
@@ -45,6 +46,7 @@ const Cart = () => {
         const db = getFirestore();
         const orderCollection = collection(db, 'orders');
         addDoc(orderCollection, order)
+        .then(resp => setIdOrder(resp.id))
     }
 
 
@@ -61,6 +63,7 @@ const Cart = () => {
     }else{
         return (
             <div className='pokelist__container'>
+                {idOrder.length !== 0 && idOrder}
                 {cartList.map(prod=> 
                                     <p className='poketext pokelist'>
                                         <img onClick={() =>deleteItem(prod.id)} className='img-fluid poketrashcan' src={removeitem} alt="Eliminar"/>
@@ -92,6 +95,7 @@ const Cart = () => {
                     name='email'
                     placeholder='e-mail'
                     value={formData.email}/>
+                    
                     
                     <button onClick={()=> alert('Orden generada!')} className='pokebutton pokebutton__cart buy-btn'>Comprar</button>
 
